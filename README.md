@@ -1,6 +1,7 @@
 # minecraft-server-scripts
 A collection of scripts to run a set of minecraft servers
 
+```
 @reboot
  \_ on_startup.sh
      \_ start_all_servers.sh
@@ -24,4 +25,4 @@ A collection of scripts to run a set of minecraft servers
      :   :
      |   \_ backup_server.sh
      \_ shutdown
-
+```
