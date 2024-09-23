@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-srcs=$(ls -d /home/mc/servers/*/*.tar.gz)
+srcs=$(ls -d $HOME/servers/*/*.tar.gz)
 
 for src in $srcs
 do

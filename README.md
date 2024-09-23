@@ -6,27 +6,27 @@ Each minecraft server has a directory in `$HOME/servers` that includes the serve
 `install.sh` links the scripts into `$HOME/bin`
 ```
 @reboot
- \_ on_startup.sh
-     \_ start_all_servers.sh
-     |   \_ start_server.sh
+ \_ on_startup
+     \_ start_all_servers
+     |   \_ start_server
      :   :
-     |   \_ start_server.sh
-     \_ upload_all_backups.sh
+     |   \_ start_server
+     \_ upload_all_backups
 
 0 4 * * *
- \_ reboot.sh
-     \_ announce_restart_all.sh
-     |   \_ announce_restart.sh
+ \_ reboot
+     \_ announce_restart_all
+     |   \_ announce_restart
      :   :
-     |   \_ announce_restart.sh
-     \_ stop_all_servers.sh
-     |   \_ stop_server.sh
+     |   \_ announce_restart
+     \_ stop_all_servers
+     |   \_ stop_server
      :   :
-     |   \_ stop_server.sh
-     \_ backup_all_servers.sh
-     |   \_ backup_server.sh
+     |   \_ stop_server
+     \_ backup_all_servers
+     |   \_ backup_server
      :   :
-     |   \_ backup_server.sh
+     |   \_ backup_server
      \_ shutdown
 ```
 
