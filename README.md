@@ -3,7 +3,7 @@ A collection of scripts to run a set of minecraft servers.
 
 Each minecraft server has a directory in `$HOME/servers` that includes the server jar and all other server files.
 
-`install.sh` links the scripts into `$HOME/bin`
+`install.sh` links the scripts into `$HOME/.local/bin`
 ```
 @reboot
  \_ on_startup
@@ -30,4 +30,4 @@ Each minecraft server has a directory in `$HOME/servers` that includes the serve
      \_ shutdown
 ```
 
-`uninstall.sh` removes the links from `$HOME/bin`
+`uninstall.sh` removes the links from `$HOME/.local/bin`
