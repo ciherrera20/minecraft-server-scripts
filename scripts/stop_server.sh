@@ -4,7 +4,6 @@ set -euo pipefail
 server_path=$HOME/servers/$1
 if [ -f $server_path/server_pid ] && [ -d /proc/$(cat $server_path/server_pid) ]; then
 	echo stop > $server_path/stdin &
-	echo Stopping $1
 else
 	echo $1 not running 
 fi

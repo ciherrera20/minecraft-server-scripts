@@ -1,8 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-cd $HOME/scripts
-./announce_restart_all.sh
-./stop_all_servers.sh
-./backup_all_servers.sh
+announce_restart_all
+stop_all_servers
+backup_all_servers
 sudo shutdown -r 0

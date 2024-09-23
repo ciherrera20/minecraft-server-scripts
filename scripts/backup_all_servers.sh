@@ -5,6 +5,6 @@ servers=$(ls -d $HOME/servers/*) | sed -r "s/^([^\/]*\/)*([^\/]*)$/\2/"
 for server in $servers
 do
 	echo Backing up $server	
-	./backup_server.sh $server &
+	backup_server $server &
 done
 wait

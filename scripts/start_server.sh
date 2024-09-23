@@ -5,7 +5,7 @@ server_path=$HOME/servers/$1
 if [ -f $server_path/server_pid ] && [ -d /proc/$(cat $server_path/server_pid) ]; then
 	echo $1 already running
 else
-	cd $server_path  # Move to server directory
+	cd $server_path >/dev/null  # Move to server directory
 
 	# Remove files used to communicate with the server
 	rm -f stdin
@@ -25,7 +25,9 @@ else
 		java $(cat flags) -jar server.jar --nogui <stdin >stdout 2>stderr &
 		echo $! > server_pid
 	}
-	cd -  # Return to original directory
+	cd - >/dev/null # Return to original directory
 
-	# ./monitor_server.sh $1
+	if [ -z ${2+x} ]; then
+		monitor_server $1
+	fi
 fi
