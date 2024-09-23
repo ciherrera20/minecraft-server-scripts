@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-cd /home/mc/scripts
+cd $HOME/scripts
 ./start_all_servers.sh
 ./upload_all_backups.sh

@@ -1,18 +1,19 @@
 #!/bin/bash
 set -euo pipefail
 
-if [ -f $1/server_pid ] && [ -d /proc/$(cat $1/server_pid) ]; then
+server_path=$HOME/servers/$1
+if [ -f $server_path/server_pid ] && [ -d /proc/$(cat $server_path/server_pid) ]; then
 	echo $1 already running
 else
-	cd $1  # Move to server directory
+	cd $server_path  # Move to server directory
 
-	# Remove named pipes used to communicate to the server
+	# Remove files used to communicate with the server
 	rm -f stdin
 	rm -f stdout
 	rm -f stderr
 	rm -f server_pid
 
-	# Create named pipes used to communicate to the server
+	# Create files used to communicate with the server
 	mkfifo stdin
 	touch stdout
 	touch stderr
