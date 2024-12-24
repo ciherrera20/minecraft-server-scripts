@@ -31,3 +31,7 @@ Each minecraft server has a directory in `$HOME/servers` that includes the serve
 ```
 
 `uninstall.sh` removes the links from `$HOME/.local/bin`
+
+Problem: Can't shutdown with message 'Failed to connect to bus: no such file or directory'
+Solution: `sudo service systemd-logind start`
+Also run `sudo service systemd-logind status` and `sudo service dbus status`
