@@ -35,3 +35,8 @@ Each minecraft server has a directory in `$HOME/servers` that includes the serve
 Problem: Can't shutdown with message 'Failed to connect to bus: no such file or directory'
 Solution: `sudo service systemd-logind start`
 Also run `sudo service systemd-logind status` and `sudo service dbus status`
+
+Problem: Servers are running but client stuck on connecting.
+Cause: Firewall is not running. Check that `sudo firewall-cmd --state` returns "not running", or `sudo systemctl status firewalld` indicates the firewall is down.
+Solution: `sudo systemctl start firewalld`, and `sudo systemctl enable firewalld`
+Run `sudo firewall-cmd --list-ports` to check that the firewall is back up
